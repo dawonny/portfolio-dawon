@@ -1,0 +1,99 @@
+// 모든 페이지에서 사용될 공통적인 내용들을 정의하기 위한 파일
+
+
+
+// 글꼴 설정
+
+// 구글 웹 폰트 설정
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+
+// 아이콘 폰트 지정
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+// 모든 태그에 기본 글꼴로 지정함
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+// reset 설정
+@import './reset.scss';
+
+// 반응형 웹 설정
+// @import './responsive.scss';
+
+/* 사이트의 기본 색상값들에 대한 변수 설정
+
+    실제 페이지 작업시에는 사이트의 색상 테마의 값들을 나열 */
+
+$black: #000;
+$dark-gray: #444;
+$gray: #616161;
+$light-gray: #eee;
+$white: #f1f1f1;
+
+// 웹 페이지 전역에 적용될 기본 스타일
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+
+    // body {
+
+    // }
+
+ a {
+    text-decoration: 0;
+    color: $black
+ }
+
+//  상단영역
+.header {
+    .head-container {
+        width: 100%;
+        height: 123px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: transparent;
+
+        ul {
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li{
+            position: fixed;
+            
+        }
+        
+    }
+    #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        
+        height: 75px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(5px)
+        
+       
+    }
+
+}
+
+// 하단영역
+// .footer {
+    
+// }

@@ -1,0 +1,359 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ /*
+    중요!!
+    'box-sizing: border-box;'를 사용할 경우
+    가로 스크롤바가 생기기 때문에
+    라이브러리의 CSS를 강제로 덮어 씌어야함
+    */
+.pg-wrapper {
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        color: #c4ccf0;
+        font-size: 80px;
+        font-family: 'Chakra Petch', sans-serif;
+        margin: 10px;
+    }
+
+    .page-contents {
+        flex: 1;
+        margin-bottom: 35px;
+        width: 90%;
+        padding: 0 25px;
+    }
+    // 동영상 백그라운드를 포함하는 페이지
+    &.page1 {
+        // 동영상을 감싸는 박스 이 박스의 크기만큼 동영상이 표시된다.
+        &.video-background {
+            background-color: #06f2;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-overray {
+                position: absolute;
+                left: 20%;
+                top: 0;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                color: #fff;
+                text-shadow: 0 1px #000;
+
+                h1 {
+                    margin: 0;
+                }
+
+                p1 {
+                    font-family: 'Caveat', cursive;
+                    font-size: .7em;
+                    color: #959dbf;
+                    margin: 0;
+                }
+
+                p2 {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: .4em;        
+                    color: #959dbf;
+                }
+                }
+            }
+        }
+        &.page2 {
+            //background-color: #673ab7;
+            .center{
+                width: 95%;
+                max-width: 1440px;
+                margin: 0 auto;
+                .center-wrap{
+                    display: flex;
+                    box-sizing: border-box;
+                    padding: 60px 0;
+                    .left{
+                        width: 45%;
+                        box-sizing: border-box;
+                        padding: 0 60px;
+                        height: 100%;
+                        display: flex;
+                        .airplane {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .right{
+                        width: 50%;
+                        box-sizing: border-box;
+                        padding: 0 60px;
+                        height: 585px;
+                        display: flex;
+                        .textbox{
+                            display: flex;
+                            align-content: flex-start;
+                            z-index: 9;
+                            background-image: url(/asstes/img/명언.png);
+                            background-position: center;
+                            background-size: 16.5px;
+                            background-repeat: no-repeat;
+                            object-fit: contain;
+                            transform: translate(575px,60px);
+                            p2{
+                                color: #fff;
+                            }  
+                        }
+                    }
+                }
+            }
+            .bg-rectangle{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            .bg-box {
+                position: relative;
+                top: 23%;
+                right: 100%;
+                width: 100%;
+                height: 60%;
+                padding-right: 600%;
+                margin-right: 50px;
+                background-color: #15213b;
+                border: 1px solid #15213b;
+                box-sizing: border-box;
+            }
+            img {
+                width: 97%;
+                position: relative;
+                right: 30%;
+                z-index: 9;
+            }
+        }
+
+
+
+
+// skill페이지 --> rProgressbar를 사용하고 있음
+        &.page3 {
+            
+            // 배경 이미지 - 막대기
+            background-image: url(/asstes/img/Rectangle-세로.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            // 이미지 분할 삽입
+            .table {
+                display: table;
+                width: 100%;
+                height: 100%;
+                border-spacing: 0;
+                .divide2 {
+                    position: relative;
+                    left: 20%;
+                    img {
+                        width: 80%;
+                    }
+                    .img-overray {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 100;
+                        width: 100%;
+                        height: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        color: #000;         
+                        p5{
+                            color: #a7aabd;
+                            font-family: 'Raleway', sans-serif;
+                            padding-left: 55px;
+                            font-size: 0.7em; 
+                            line-height: 20px;
+                        }
+                    }
+                }
+                .divide {
+                    display: table-cell;
+                    width: 50%;
+                    vertical-align: middle;
+
+                    h3 {
+                        font-family: 'Raleway', sans-serif;
+                        display: flex;
+                        flex-direction: column;
+                        font-weight: 700;
+                        font-size: 1.7em;
+                        padding-left: 6%;
+                        margin-left: 9%;
+                        img{
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+
+            // 그래프를 세로로 나열하고 간격을 설정함
+            .page-contents {
+        
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 74%;
+                left: 12%;
+                top: 11%;
+                position: relative;
+        
+                // 그래프를 포함하는 영역
+                .skill-progressbar-container {
+                    width: 100%;
+
+                    // 그래프 제목
+                    .skill-progressbar-title {
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        margin-bottom: 5px;
+                        line-height: 25px;
+                        color: #000;
+                        font-weight: 600;
+                    }
+                    .percentCount {
+                        color: #000;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+
+
+
+
+//portfolio 작업 단계
+        &.page4 {
+            background-color: #e91e63;
+            // 동영상 백그라운드를 포함하는 페이지
+        &.video-background {
+            background-color: #06f2;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-overray {
+                position: absolute;
+                top: 0;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                color: #fff;
+                text-shadow: 0 1px #000;
+            }
+        }
+            .portfolio-container{
+                width: 70%;
+                margin: 10px auto;
+                padding-top: 40px;
+                button {
+                    color: #959dbf;
+                    border: 4px solid transparent;
+                    border-radius: 10px;
+                    border-image: linear-gradient(to left,#959DBF, #8D6B96);
+                    border-image-slice: 2;
+                    background-color: #fff0;
+                    padding: 5px;
+                    &:hover {
+                            border: 4px solid #8D6B96;
+                    }
+                    a{
+                        background-color: #fff;
+                    }
+                }
+
+                .portfolio-gallery{
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .portfolio-item{
+                        flex-basis: 25%;
+                        width: 25%;
+
+                        a{
+                            display: block;
+                            width: 100%;
+                            color: #fff;
+                            position: relative;
+
+                            h4 {
+                                font-size: 14px;
+                                font-weight: 400;
+                                text-align: center;
+                                padding: 5px;
+                                background-color: #00000055;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                opacity: 0;
+                                transition: opacity 0.3s ease-in-out;
+                            }
+                            &:hover {
+                                h4 {
+                                    opacity: 1;
+                                }
+                            }
+                            img{
+                                width: 100%;
+                                height: 200px;
+                                object-fit: cover;
+                            }
+                        }               
+                    }
+                }
+            }
+        }
+        &.page5 {
+            background-color: #f44336;
+        }
+}
+    
